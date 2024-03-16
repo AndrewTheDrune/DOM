@@ -56,6 +56,6 @@ let squareHidden = false;
 // })
 
 // №7
-squareRed.addEventListener("hover", function(){
-    squareRed.style.backgroundColor = '#008000';
-})
+// squareRed.addEventListener("hover", function(){
+//     squareRed.style.backgroundColor = '#008000';
+// })
