@@ -1,13 +1,14 @@
 body{
     display: flex;
     justify-content: center;
-    margin-top: 20em;
+    margin-block: 35vh;
 }
 
 .background{
     display: flex;
-    justify-content: center;
-    background-color: aliceblue;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #f0f8ff;
     border-radius: 5em;
     padding-block: 1em;
     padding-inline: 5em;
@@ -66,7 +67,7 @@ button:active{
     transition: 0.5s;
 }
 
-.square-red:hover{
+.square-red:ac{
     background-color: rgb(0, 128, 0);
     padding: 5em;
     margin: 1em;

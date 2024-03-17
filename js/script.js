@@ -2,6 +2,7 @@ let button = document.querySelector("button");
 let buttonBlock = document.getElementById("button-block");
 let buttonUnblock = document.getElementById("button-unblock");
 let squareRed = document.querySelector(".square-red");
+let background = document.querySelector(".background");
 let squareHidden = false;
 
 
@@ -56,6 +57,14 @@ let squareHidden = false;
 // })
 
 // №7
-// squareRed.addEventListener("hover", function(){
+// squareRed.addEventListener("click", function(){
 //     squareRed.style.backgroundColor = '#008000';
+// })
+
+// №8
+// background.addEventListener("click", function(e){
+//     e.target.style.backgroundColor = '#008000';
+//     e.target.style.boxShadow = 'inset 0 0 20px 5px rgba(0, 0, 0, 0.5)';
+
+
 // })
