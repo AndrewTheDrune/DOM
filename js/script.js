@@ -1,70 +1,88 @@
-let button = document.querySelector("button");
+let buttonHello = document.querySelector("#button-hello");
+let buttonMail = document.querySelector("#button-mail");
+let buttonInput = document.querySelector("#button-input");
+let buttonSwap = document.querySelector("#button-swap");
+let buttonHide = document.querySelector("#button-hide");
 let buttonBlock = document.getElementById("button-block");
 let buttonUnblock = document.getElementById("button-unblock");
 let squareRed = document.querySelector(".square-red");
-let background = document.querySelector(".background");
+let backgroundSquares = document.querySelector(".background-squares");
 let squareHidden = false;
+let clicked = false;
+let lastClicked;
+
 
 
 // №1
-// button.addEventListener("click", function(){
-//     alert("Привет мир!");
-// })
+buttonHello.addEventListener("click", function(){
+    alert("Привет мир!");
+})
 
 // №2
-// button.addEventListener("click", function(){
-//     document.querySelector(".input-main").value = "test@email.ru";
-// })
+buttonMail.addEventListener("click", function(){
+    document.querySelector("#input-1").value = "test@email.ru";
+})
 
 // №3
-// button.addEventListener("click", function(){
-//    if (document.querySelector(".input-main").value == 0) {
-//      alert("Вы ничего не ввели в поле");
-//    } else {
-//      alert("Вы ввели текст инпута");
-//    }
-// })
+buttonInput.addEventListener("click", function(){
+   if (document.querySelector("#input-2").value == 0) {
+     alert("Вы ничего не ввели в поле");
+   } else {
+     alert("Вы ввели текст инпута");
+   }
+})
 
 // №4
-// button.addEventListener("click", function(){
-//     let inputValue1 = document.getElementById("main-1").value;
-//     let inputValue2 = document.getElementById("main-2").value;
+buttonSwap.addEventListener("click", function(){
+    let inputValue1 = document.getElementById("input-3").value;
+    let inputValue2 = document.getElementById("input-4").value;
 
-//     document.getElementById("main-1").value = inputValue2;
-//     document.getElementById("main-2").value = inputValue1;
-// })
+    document.getElementById("input-3").value = inputValue2;
+    document.getElementById("input-4").value = inputValue1;
+})
 
 // №5
-// buttonBlock.addEventListener("click", function(){
-//     document.querySelector(".input-main").disabled = true;
-// })
+buttonBlock.addEventListener("click", function(){
+    document.querySelector("#input-5").disabled = true;
+})
 
-// buttonUnblock.addEventListener("click", function(){
-//     document.querySelector(".input-main").disabled = false;
-// })
+buttonUnblock.addEventListener("click", function(){
+    document.querySelector("#input-5").disabled = false;
+})
 
 // №6   
-// button.addEventListener("click", function(){
-//     if (squareHidden) {
-//         document.querySelector(".square").hidden = false;
-//         squareHidden = false;
-//         button.innerHTML = "Скрыть квадрат";
-//     } else {
-//         document.querySelector(".square").hidden = true;
-//         squareHidden = true;
-//         button.innerHTML = "Показать квадрат";
-//     }
-// })
+buttonHide.addEventListener("click", function(){
+    if (squareHidden) {
+        document.querySelector(".square").hidden = false;
+        squareHidden = false;
+        buttonHide.innerHTML = "Скрыть квадрат";
+    } else {
+        document.querySelector(".square").hidden = true;
+        squareHidden = true;
+        buttonHide.innerHTML = "Показать квадрат";
+    }
+})
 
 // №7
-// squareRed.addEventListener("click", function(){
-//     squareRed.style.backgroundColor = '#008000';
-// })
+squareRed.addEventListener("click", function(){
+    squareRed.style.backgroundColor = '#008000';
+    squareRed.style.boxShadow = 'inset 0 0 20px 5px rgba(0, 0, 0, 0.5)';
+})
 
 // №8
-// background.addEventListener("click", function(e){
-//     e.target.style.backgroundColor = '#008000';
-//     e.target.style.boxShadow = 'inset 0 0 20px 5px rgba(0, 0, 0, 0.5)';
+backgroundSquares.addEventListener("click", function(e){
+    if (e.target == backgroundSquares){
+        return;
+    }
+    e.target.style.backgroundColor = '#008000';
+    e.target.style.boxShadow = 'inset 0 0 20px 5px rgba(0, 0, 0, 0.5)';
+    if (clicked){
+        lastClicked.style.backgroundColor = '#ff0000';
+        lastClicked.style.boxShadow = '0 0 0 0';
+        clicked = false;
+    }
+    lastClicked = e.target;
+    clicked = true;
+})
 
-
-// })
+// №9
